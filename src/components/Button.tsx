@@ -5,7 +5,7 @@ type ButtonProps = {
   className: string;
   disabled?: boolean;
   type: "submit" | "button" | "reset";
-  onClick: () => void;
+  onClick: (...args: any[]) => void;
   ariaLabel: string;
 };
 
@@ -22,7 +22,7 @@ const Button = ({
       aria-label={ariaLabel}
       type={type}
       className={className}
-      onClick={onClick}
+      onClick={(e) => onClick(e)}
       disabled={disabled}
     >
       {title}
