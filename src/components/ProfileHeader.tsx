@@ -21,7 +21,7 @@ const ProfileHeader = () => {
           <h1 className="text-purple-400 font-bold md:text-4xl text-lg">
             withBloom
           </h1>
-          <div className="mr-10 md:mr-10 mt-1 md:mt-0">
+          <div className="mr-10 flex gap-x-1 md:mr-10 mt-1 md:mt-0">
             <p className="text-sm font-light">Welcome</p>
             <p className="text-sm font-bold">{user.displayName}</p>
           </div>

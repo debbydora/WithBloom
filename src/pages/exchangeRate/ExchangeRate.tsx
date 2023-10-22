@@ -13,15 +13,16 @@ function ExchangeRate() {
     handleCalculate,
     handleReset,
     amount,
+    areAllFieldsFilled,
   } = useCoins();
 
   return (
-    <div className="relative">
+    <div className="relative overflow-y-auto">
       <h1 className="text-lg font-semibold mt-4 md:mt-0">
         Currency Conversion Calculator
       </h1>
-      <div className="flex flex-col bg-white p-[30px] md:w-[50%] w-[90%]  rounded-3xl fixed top-1/2 left-[50%] md:left-[60%] transform -translate-x-1/2 -translate-y-1/2 shadow-cardColor border border-[#8a66c4] text-black">
-        <form className="flex flex-col gap-6">
+      <div className="flex flex-col bg-white p-[30px] md:w-[70%] w-[90%] mt-16 md:mt-24 mb-16 rounded-3xl mx-auto shadow-cardColor border border-[#8a66c4] text-black">
+        <form className="flex flex-col md:gap-6 gap-2">
           <div className="flex  md:flex-row gap-4 flex-col-reverse justify-between">
             <label className=" font-semibold">
               Amount:
@@ -36,7 +37,7 @@ function ExchangeRate() {
             <div className="font-extrabold">
               Result:
               <p className="mt-1 text-[#6232b0]">
-                {typeof result === "number" ? result.toFixed(2) : result}
+                {typeof result === "number" ? result.toFixed(4) : result}
               </p>
             </div>
           </div>
@@ -80,13 +81,14 @@ function ExchangeRate() {
             </label>
           </div>
 
-          <div className="flex justify-between md:flex-row gap-4 flex-col">
+          <div className="flex justify-between md:flex-row gap-4 ">
             <Button
               title={"Convert"}
               type="button"
               ariaLabel="exchange calculator button"
-              className="bg-[#3c009d] text-white p-3 rounded-2xl mx-auto mt-4 w-[40%] hover:scale-[.98]  transition ease-in duration-150 hover:bg-[#6232b0]"
+              className={`bg-[#3c009d] text-white p-3 rounded-2xl mx-auto mt-4 w-[40%] hover:scale-[.98]  transition ease-in duration-150 hover:bg-[#6232b0] ${!areAllFieldsFilled() && "bg-gray-600 cursor-not-allowed hover:bg-gray-600"}`}
               onClick={handleCalculate}
+              disabled={!areAllFieldsFilled()}
             />
             <Button
               title={"Reset"}

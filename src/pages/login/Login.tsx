@@ -9,7 +9,7 @@ const Login = () => {
   const navigate = useNavigate();
   return (
     <div className="containerDiv h-[100vh] relative">
-      <div className="flex flex-col bg-white p-[30px] md:w-[40%] w-[90%]  rounded-lg fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      <div className="flex flex-col bg-white p-[30px] md:w-[30%] w-[90%]  rounded-lg fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
         <p className="text-[#3c009d] font-bold text-3xl text-center">Log in</p>
         <div className="w-[61px] h-[6px] bg-[#3c009d] rounded-lg flex mx-auto mt-3"></div>
         <div className="flex flex-col gap-2 mt-8">

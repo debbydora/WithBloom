@@ -44,9 +44,9 @@ const Dashboard = () => {
                 </svg>
               </div>
               <input
-                type="search"
+                type="text"
                 id="default-search"
-                className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:border-[#8a66c4] outline-none"
+                className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:border-[#8a66c4] outline-none cursor-pointer"
                 placeholder="Search coins..."
                 value={searchQuery}
                 onChange={onChange}
@@ -55,11 +55,10 @@ const Dashboard = () => {
           </form>
           <div className="flex justify-between items-center gap-x-4">
             <p className="font-medium">Filter</p>
-            <div className="flex flex-col p-4 w-[100%] shadow-cardColor border border-[#8a66c4] rounded-lg bg-gray-50 focus:border-[#8a66c4] outline-none cursor-pointer ">
               <select
                 value={selectedCoin}
                 onChange={onFilterSelect}
-                className="outline-none bg-gray-50 cursor-pointer"
+                className="flex flex-col p-3 w-[100%] shadow-cardColor border border-[#8a66c4] rounded-lg bg-gray-50 focus:border-[#8a66c4] outline-none cursor-pointer"
               >
                 <option value="">All Coins</option>
                 {coinList !== undefined &&
@@ -69,7 +68,6 @@ const Dashboard = () => {
                     </option>
                   ))}
               </select>
-            </div>
           </div>
         </div>
         <div className="flex flex-wrap md:gap-2 md:gap-x-14 gap-2">

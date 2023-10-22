@@ -89,9 +89,10 @@ const useCoins = () => {
     if (rateA !== undefined && rateB !== undefined) {
       const convertedAmount = (numericAmount / rateA) * rateB;
       setResult(convertedAmount);
+      handleReset();
     } else {
       setResult(0);
-      toast.info("Invalid source or target currency", {
+      toast.error("Invalid source or target currency", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -108,7 +109,11 @@ const useCoins = () => {
      setSourceCurrency("");
      setTargetCurrency("");
      setResult(0);
-   };
+  };
+  
+    const areAllFieldsFilled = () => {
+      return amount !== "" && sourceCurrency !== "" && targetCurrency !== "";
+    };
 
   return {
     coinList,
@@ -126,7 +131,8 @@ const useCoins = () => {
     handleReset,
     targetCurrency,
     sourceCurrency,
-    amount
+    amount,
+    areAllFieldsFilled,
   };
 };
 

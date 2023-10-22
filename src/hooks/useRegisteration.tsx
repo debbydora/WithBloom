@@ -38,7 +38,7 @@ const useRegisteration = () => {
         specificErrorCode = parts[1];
       }
     }
-    return toast.info(specificErrorCode, {
+    return toast.error(specificErrorCode, {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -86,15 +86,6 @@ const useRegisteration = () => {
       .then((res) => {
         setLoading(false);
         if (res?.user.email !== "") {
-          toast.info("Successfully logged in", {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-          });
           navigate("/dashboard");
         }
         handleReset();
