@@ -1,11 +1,15 @@
-import React from "react";
-import { BsPersonCircle } from "react-icons/bs";
+import React, { useContext } from "react";
 import Harmburger from "./Harmburger";
 import { sideBarArr } from "../utils/SideBarArray";
 import SideBarItem from "./sideBar/SideBarItem";
+import { AuthContext } from "../context/AuthContext";
+import { FaSignOutAlt } from "react-icons/fa";
+import useRegisteration from "../hooks/useRegisteration";
 
 const ProfileHeader = () => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const { user } = useContext(AuthContext)
+  const {handleLogout} = useRegisteration()
 
   const toggle = () => setIsOpen(!isOpen);
 
@@ -17,9 +21,9 @@ const ProfileHeader = () => {
           <h1 className="text-purple-400 font-bold md:text-4xl text-lg">
             withBloom
           </h1>
-          <div className="mr-10 md:mr-0 mt-1 md:mt-0">
-            <BsPersonCircle size="25px" />
-            <p> Ada</p>
+          <div className="mr-10 md:mr-10 mt-1 md:mt-0">
+            <p className="text-sm font-light">Welcome</p>
+            <p className="text-sm font-bold">{user.displayName}</p>
           </div>
         </div>
 
@@ -49,6 +53,13 @@ const ProfileHeader = () => {
                 {sideBarArr.map((barItem, index) => (
                   <SideBarItem key={index} barItem={barItem} />
                 ))}
+              </div>
+              <div
+                className="flex items-center gap-2 pl-4 font-semibold  md:mt-[5rem] cursor-pointer text-red-400"
+                onClick={handleLogout}
+              >
+                <FaSignOutAlt size="20" />
+                <p className="text-red-400">Logout</p>
               </div>
             </div>
           </div>

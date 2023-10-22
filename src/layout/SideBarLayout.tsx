@@ -11,7 +11,7 @@ const SideBarLayout = () => {
         </div>
         <div className="flex mt-[4rem]">
           <SideBar />
-          <div className={`lg:ml-[20%] w-full md:p-4 mt-10 px-6`}>
+          <div className={`lg:ml-[20%] w-full md:p-4 mt-4 px-6`}>
             <Outlet />
           </div>
         </div>

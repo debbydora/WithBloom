@@ -1,4 +1,3 @@
-import React from "react";
 import { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
@@ -71,7 +70,7 @@ const InputField = ({
                 })) ||
                 {})}
               placeholder={placeholder}
-              className="block w-full md:py-2   bg-white rounded-md focus:outline-none  sm:text-sm"
+              className="block w-full md:py-2 bg-gray-50 rounded-md focus:outline-none  sm:text-sm"
               aria-required={ariaRequired}
             />
             <div
@@ -79,11 +78,7 @@ const InputField = ({
               onClick={handleTogglePassword}
             >
               {showPassword ? (
-                <img
-                  src={AiOutlineEyeInvisible}
-                  alt="password icon locked"
-                  className="w-[20px] h-[20px]"
-                />
+                <AiOutlineEyeInvisible color="#808080" size="24px" />
               ) : (
                 <AiOutlineEye color="#808080" size="24px" />
               )}
@@ -114,7 +109,7 @@ const InputField = ({
               }))}
             placeholder={placeholder}
             aria-required={ariaRequired}
-            className="block w-full py-2  text-secondaryLight bg-white focus:outline-none text-[12px]  "
+            className="block w-full py-2  text-[#9d7fce] bg-gray-50 focus:outline-none text-[12px]  "
           />
         );
     }
@@ -125,8 +120,8 @@ const InputField = ({
       onFocus={handleFocus}
       onBlur={handleBlur}
       tabIndex={0}
-      className={` mb-4 w-full h-[65px]  border-[0.1px] ${
-        isFocused ? "border-primary" : "border-[#c4c1c1]"
+      className={` mb-4 w-full bg-gray-50 h-[65px]  border-[0.1px] ${
+        isFocused ? "border-[#8a66c4]" : "border-[#c4c1c1]"
       } rounded-md py-1 px-4 ${className ? className : " "}`}
     >
       {label && (
@@ -135,7 +130,7 @@ const InputField = ({
           className={`flex ${
             boldLabel ? "text-[14px] font-[600]" : "text-[12px] font-[600]"
           }  ${
-            asteriks && "after:content-['*'] after:text-red after:ml-0.5"
+            asteriks && "after:content-['*'] after:text-red-300 after:ml-0.5"
           } text-[#444448] `}
         >
           {label}
