@@ -11,7 +11,7 @@ const Harmburger = ({ isOpen, onClick }: HarmBurgerProps) => {
       onClick={onClick}
     >
       <svg
-        fill="#2CBCEF"
+        fill="#3c009d"
         className="hamburger"
         viewBox="0 0 100 100"
         width="40"
