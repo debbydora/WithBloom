@@ -70,7 +70,7 @@ const InputField = ({
                 })) ||
                 {})}
               placeholder={placeholder}
-              className="block w-full md:py-2 bg-gray-50 rounded-md focus:outline-none  sm:text-sm"
+              className="block w-full md:py-2 bg-gray-50 rounded-md focus:outline-none text-[12px]"
               aria-required={ariaRequired}
             />
             <div
@@ -109,7 +109,7 @@ const InputField = ({
               }))}
             placeholder={placeholder}
             aria-required={ariaRequired}
-            className="block w-full py-2  text-[#9d7fce] bg-gray-50 focus:outline-none text-[12px]  "
+            className="block w-full py-2  text-[#9d7fce] bg-gray-50 focus:outline-none text-[12px]"
           />
         );
     }
