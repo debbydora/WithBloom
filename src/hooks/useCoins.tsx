@@ -65,7 +65,7 @@ const useCoins = () => {
     const numericAmount = Number(amount);
 
     if (isNaN(numericAmount)) {
-      toast.info("Please enter a valid number for the amount", {
+      toast.error("Please enter a valid number for the amount", {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -74,7 +74,7 @@ const useCoins = () => {
         draggable: true,
         progress: undefined,
       });
-      setAmount("")
+      setAmount("");
       setResult(0);
       return;
     }
@@ -86,10 +86,10 @@ const useCoins = () => {
       (coin: any) => coin.name === targetCurrency
     )?.rate;
 
+
     if (rateA !== undefined && rateB !== undefined) {
       const convertedAmount = (numericAmount / rateA) * rateB;
       setResult(convertedAmount);
-      handleReset();
     } else {
       setResult(0);
       toast.error("Invalid source or target currency", {
@@ -104,16 +104,16 @@ const useCoins = () => {
     }
   };
 
-   const handleReset = () => {
-     setAmount("");
-     setSourceCurrency("");
-     setTargetCurrency("");
-     setResult(0);
+  const handleReset = () => {
+    setAmount("");
+    setSourceCurrency("");
+    setTargetCurrency("");
+    setResult(0);
   };
-  
-    const areAllFieldsFilled = () => {
-      return amount !== "" && sourceCurrency !== "" && targetCurrency !== "";
-    };
+
+  const areAllFieldsFilled = () => {
+    return amount !== "" && sourceCurrency !== "" && targetCurrency !== "";
+  };
 
   return {
     coinList,
