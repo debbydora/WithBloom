@@ -5,7 +5,7 @@ import './index.css'
 import { firebaseConfig } from './Firebase.ts'
 import { initializeApp } from 'firebase/app'
 
-const app = initializeApp(firebaseConfig)
+initializeApp(firebaseConfig)
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
