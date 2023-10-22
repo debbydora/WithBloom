@@ -94,8 +94,8 @@ const useCoins = () => {
       setResult(0);
       toast.error("Invalid source or target currency", {
         position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
+        autoClose: 3000,
+        hideProgressBar: true,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,

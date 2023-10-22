@@ -40,8 +40,8 @@ const useRegisteration = () => {
     }
     return toast.error(specificErrorCode, {
       position: "top-right",
-      autoClose: 5000,
-      hideProgressBar: false,
+      autoClose: 3000,
+      hideProgressBar: true,
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
@@ -61,8 +61,8 @@ const useRegisteration = () => {
         if (res?.user.email !== "") {
           toast.info("Signup successful", {
             position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
+            autoClose: 3000,
+            hideProgressBar: true,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
