@@ -57,6 +57,7 @@ const Login = () => {
         </p>
         <Button
           title={loading ? "Logging in..." : "Login"}
+          role="submitlogin"
           type="submit"
           ariaLabel="log in button"
           className="bg-[#3c009d] text-white p-3 rounded-2xl mx-auto mt-4 w-[40%] hover:scale-[.98]  transition ease-in duration-150 hover:bg-[#6232b0]"
