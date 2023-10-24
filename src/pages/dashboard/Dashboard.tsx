@@ -16,7 +16,7 @@ const Dashboard = () => {
   return (
     <>
       <div className="flex flex-col gap-6 pb-6">
-        <p className="text-lg font-extrabold mt-4 md:mt-0">All Coins</p>
+        <p className="text-lg font-extrabold mt-4 md:mt-0" role="heading">All Coins</p>
         <div className="flex flex-col md:flex-row justify-between gap-y-6">
           <form>
             <label

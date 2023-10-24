@@ -10,7 +10,7 @@ type AuthContextType = {
 // Initialize the context
 export const AuthContext = createContext<AuthContextType | any>(undefined);
 
-interface AuthContextProps {
+export interface AuthContextProps {
   children: ReactNode;
 }
 

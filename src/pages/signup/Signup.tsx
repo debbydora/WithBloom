@@ -10,7 +10,7 @@ const Signup = () => {
   return (
     <div className="containerDiv h-[100vh] relative">
       <div className="flex flex-col bg-white p-[30px] md:w-[40%] w-[90%]  rounded-lg fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-        <p className="text-[#3c009d] font-bold text-3xl text-center">Sign up</p>
+        <p className="text-[#3c009d] font-bold text-3xl text-center" role="heading">Sign up</p>
         <div className="w-[61px] h-[6px] bg-[#3c009d] rounded-lg flex mx-auto mt-3"></div>
         <div className="flex flex-col gap-2 mt-8">
           <div className="w-full">
@@ -75,9 +75,10 @@ const Signup = () => {
         <Button
           title={loading? "Signing up ..." :"Sign up"}
           type="button"
-          ariaLabel="log in button"
+          ariaLabel="Sign up button"
           className="bg-[#3c009d] text-white p-3 rounded-2xl mx-auto mt-8 w-[40%] hover:scale-[.98]  transition ease-in duration-150 hover:bg-[#6232b0]"
           onClick={handleSubmit(handleSignup)}
+          role="submitsignup"
         />
       </div>
     </div>

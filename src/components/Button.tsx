@@ -1,10 +1,11 @@
 type ButtonProps = {
   title: string;
-  className: string;
+  className?: string;
   disabled?: boolean;
   type: "submit" | "button" | "reset";
   onClick: (...args: any[]) => void;
   ariaLabel: string;
+  role?: string;
 };
 
 const Button = ({
@@ -14,6 +15,7 @@ const Button = ({
   type,
   onClick,
   ariaLabel,
+  role
 }: ButtonProps) => {
   return (
     <button
@@ -22,6 +24,7 @@ const Button = ({
       className={className}
       onClick={(e) => onClick(e)}
       disabled={disabled}
+      role={role}
     >
       {title}
     </button>

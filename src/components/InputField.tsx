@@ -16,6 +16,11 @@ type InputProps = {
   className?: string;
   ariaRequired?: boolean;
 };
+
+export const validateEmail = (email: string) => {
+  const emailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+  return emailPattern.test(email);
+};
 const InputField = ({
   label,
   type,
@@ -44,11 +49,6 @@ const InputField = ({
       setFocused(false);
     }
   };
-
-  function validateEmail(email: string) {
-    const emailPattern = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-    return emailPattern.test(email);
-  }
 
   const renderInput = () => {
     switch (type) {
